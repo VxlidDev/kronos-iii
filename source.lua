@@ -1,392 +1,148 @@
 -- VxlidDev
 -- lmao
 
-mas = game.Players.LocalPlayer.PlayerGui;
-ScreenGui0 = Instance.new("ScreenGui")
-Frame1 = Instance.new("Frame")
-TextLabel2 = Instance.new("TextLabel")
-TextLabel3 = Instance.new("TextLabel")
-TextLabel4 = Instance.new("TextLabel")
-TextButton5 = Instance.new("TextButton")
-TextLabel6 = Instance.new("TextLabel")
-TextButton7 = Instance.new("TextButton")
-TextButton8 = Instance.new("TextButton")
-TextButton9 = Instance.new("TextButton")
-TextButton10 = Instance.new("TextButton")
-TextButton11 = Instance.new("TextButton")
-TextLabel12 = Instance.new("TextLabel")
-TextLabel13 = Instance.new("TextLabel")
-TextLabel14 = Instance.new("TextLabel")
-TextButton15 = Instance.new("TextButton")
-TextButton16 = Instance.new("TextButton")
-TextButton17 = Instance.new("TextButton")
-TextButton18 = Instance.new("TextButton")
-ScreenGui0.Name = game:GetService("HttpService"):GenerateGUID(false);
-ScreenGui0.Parent = mas
-ScreenGui0.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Frame1.Name = "Background"
-Frame1.Parent = ScreenGui0
-Frame1.Position = UDim2.new(0.16579926, 0, 0.258823514, 0)
-Frame1.Size = UDim2.new(0.667657971, 0, 0.482352942, 0)
-Frame1.BackgroundColor = BrickColor.new("Black metallic")
-Frame1.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-Frame1.BackgroundTransparency = 0.20000000298023224
-TextLabel2.Name = "Title"
-TextLabel2.Parent = Frame1
-TextLabel2.Position = UDim2.new(0.0077951001, 0, 0.0146341464, 0)
-TextLabel2.Size = UDim2.new(0.222717151, 0, 0.0512195118, 0)
-TextLabel2.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel2.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel2.BackgroundTransparency = 1
-TextLabel2.Font = Enum.Font.Nunito
-TextLabel2.FontSize = Enum.FontSize.Size14
-TextLabel2.Text = "KRONOS - III Exploit Panel"
-TextLabel2.TextColor = BrickColor.new("Institutional white")
-TextLabel2.TextColor3 = Color3.new(1, 1, 1)
-TextLabel2.TextScaled = true
-TextLabel2.TextSize = 14
-TextLabel2.TextWrap = true
-TextLabel2.TextWrapped = true
-TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel3.Name = "Author"
-TextLabel3.Parent = Frame1
-TextLabel3.Position = UDim2.new(0.0077951001, 0, 0.0658536553, 0)
-TextLabel3.Size = UDim2.new(0.222717151, 0, 0.0390243903, 0)
-TextLabel3.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel3.BackgroundTransparency = 1
-TextLabel3.Font = Enum.Font.Nunito
-TextLabel3.FontSize = Enum.FontSize.Size14
-TextLabel3.Text = "Made by <b>VxlidDev</b>"
-TextLabel3.RichText = true;
-TextLabel3.TextColor = BrickColor.new("Institutional white")
-TextLabel3.TextColor3 = Color3.new(1, 1, 1)
-TextLabel3.TextScaled = true
-TextLabel3.TextSize = 14
-TextLabel3.TextWrap = true
-TextLabel3.TextWrapped = true
-TextLabel3.TextXAlignment = Enum.TextXAlignment.Left
-TextLabel4.Name = "HowTo"
-TextLabel4.Parent = Frame1
-TextLabel4.Position = UDim2.new(0.792873025, 0, 0.0146341464, 0)
-TextLabel4.Size = UDim2.new(0.191536754, 0, 0.0390243903, 0)
-TextLabel4.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel4.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel4.BackgroundTransparency = 1
-TextLabel4.Font = Enum.Font.Nunito
-TextLabel4.FontSize = Enum.FontSize.Size14
-TextLabel4.Text = "Press <b>P</b> to hide/show the menu"
-TextLabel4.RichText = true
-TextLabel4.TextColor = BrickColor.new("Institutional white")
-TextLabel4.TextColor3 = Color3.new(1, 1, 1)
-TextLabel4.TextScaled = true
-TextLabel4.TextSize = 14
-TextLabel4.TextWrap = true
-TextLabel4.TextWrapped = true
-TextLabel4.TextXAlignment = Enum.TextXAlignment.Right
-TextButton5.Name = "KillSwitch"
-TextButton5.Parent = Frame1
-TextButton5.Position = UDim2.new(0.863028944, 0, 1.01463413, 0)
-TextButton5.Size = UDim2.new(0.136971042, 0, 0.0682926849, 0)
-TextButton5.BackgroundColor = BrickColor.new("Black metallic")
-TextButton5.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton5.BackgroundTransparency = 0.30000001192092896
-TextButton5.AutoButtonColor = false
-TextButton5.Font = Enum.Font.Nunito
-TextButton5.FontSize = Enum.FontSize.Size14
-TextButton5.Text = "KILL SWITCH"
-TextButton5.TextColor = BrickColor.new("Persimmon")
-TextButton5.TextColor3 = Color3.new(1, 0.294118, 0.305882)
-TextButton5.TextScaled = true
-TextButton5.TextSize = 14
-TextButton5.TextWrap = true
-TextButton5.TextWrapped = true
-TextLabel6.Name = "HowTo"
-TextLabel6.Parent = TextButton5
-TextLabel6.Position = UDim2.new(-1.70648754, 0, 0.964285731, 0)
-TextLabel6.Size = UDim2.new(2.71130228, 0, 0.717551351, 0)
-TextLabel6.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel6.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel6.BackgroundTransparency = 1
-TextLabel6.Font = Enum.Font.Nunito
-TextLabel6.FontSize = Enum.FontSize.Size14
-TextLabel6.Text = "<b>Kill Switch</b> deletes the UI, stopping it from being used."
-TextLabel6.RichText = true;
-TextLabel6.TextColor = BrickColor.new("Institutional white")
-TextLabel6.TextColor3 = Color3.new(1, 1, 1)
-TextLabel6.TextScaled = true
-TextLabel6.TextSize = 14
-TextLabel6.TextWrap = true
-TextLabel6.TextWrapped = true
-TextLabel6.Visible = false
-TextLabel6.TextXAlignment = Enum.TextXAlignment.Right
-TextButton7.Name = "966"
-TextButton7.Parent = Frame1
-TextButton7.Position = UDim2.new(0.0155902002, 0, 0.134146348, 0)
-TextButton7.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton7.BackgroundColor = BrickColor.new("Black metallic")
-TextButton7.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton7.BackgroundTransparency = 0.30000001192092896
-TextButton7.AutoButtonColor = false
-TextButton7.Font = Enum.Font.Unknown
-TextButton7.FontSize = Enum.FontSize.Size14
-TextButton7.Text = "Make SCP-966 Visible"
-TextButton7.TextColor = BrickColor.new("Institutional white")
-TextButton7.TextColor3 = Color3.new(1, 1, 1)
-TextButton7.TextScaled = true
-TextButton7.TextSize = 14
-TextButton7.TextWrap = true
-TextButton7.TextWrapped = true
-TextButton8.Name = "CDShopItems"
-TextButton8.Parent = Frame1
-TextButton8.Position = UDim2.new(0.0155902002, 0, 0.204878062, 0)
-TextButton8.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton8.BackgroundColor = BrickColor.new("Black metallic")
-TextButton8.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton8.BackgroundTransparency = 0.30000001192092896
-TextButton8.AutoButtonColor = false
-TextButton8.Font = Enum.Font.Unknown
-TextButton8.FontSize = Enum.FontSize.Size14
-TextButton8.Text = "Get all CD Shop Items (Still Costs Credits)"
-TextButton8.TextColor = BrickColor.new("Institutional white")
-TextButton8.TextColor3 = Color3.new(1, 1, 1)
-TextButton8.TextScaled = true
-TextButton8.TextSize = 14
-TextButton8.TextWrap = true
-TextButton8.TextWrapped = true
-TextButton9.Name = "LoadIY"
-TextButton9.Parent = Frame1
-TextButton9.Position = UDim2.new(0.0155902002, 0, 0.275609761, 0)
-TextButton9.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton9.BackgroundColor = BrickColor.new("Black metallic")
-TextButton9.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton9.BackgroundTransparency = 0.30000001192092896
-TextButton9.AutoButtonColor = false
-TextButton9.Font = Enum.Font.Unknown
-TextButton9.FontSize = Enum.FontSize.Size14
-TextButton9.Text = "Load Infinite Yield"
-TextButton9.TextColor = BrickColor.new("Institutional white")
-TextButton9.TextColor3 = Color3.new(1, 1, 1)
-TextButton9.TextScaled = true
-TextButton9.TextSize = 14
-TextButton9.TextWrap = true
-TextButton9.TextWrapped = true
-TextButton10.Name = "LoadDex"
-TextButton10.Parent = Frame1
-TextButton10.Position = UDim2.new(0.0155902002, 0, 0.348780483, 0)
-TextButton10.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton10.BackgroundColor = BrickColor.new("Black metallic")
-TextButton10.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton10.BackgroundTransparency = 0.30000001192092896
-TextButton10.AutoButtonColor = false
-TextButton10.Font = Enum.Font.Unknown
-TextButton10.FontSize = Enum.FontSize.Size14
-TextButton10.Text = "Load Dex Explorer"
-TextButton10.TextColor = BrickColor.new("Institutional white")
-TextButton10.TextColor3 = Color3.new(1, 1, 1)
-TextButton10.TextScaled = true
-TextButton10.TextSize = 14
-TextButton10.TextWrap = true
-TextButton10.TextWrapped = true
-TextButton11.Name = "CDCZTP"
-TextButton11.Parent = Frame1
-TextButton11.Position = UDim2.new(0.0155902002, 0, 0.600000024, 0)
-TextButton11.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton11.BackgroundColor = BrickColor.new("Black metallic")
-TextButton11.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton11.BackgroundTransparency = 0.30000001192092896
-TextButton11.AutoButtonColor = false
-TextButton11.Font = Enum.Font.Unknown
-TextButton11.FontSize = Enum.FontSize.Size14
-TextButton11.Text = "CDCZ"
-TextButton11.TextColor = BrickColor.new("Institutional white")
-TextButton11.TextColor3 = Color3.new(1, 1, 1)
-TextButton11.TextScaled = true
-TextButton11.TextSize = 14
-TextButton11.TextWrap = true
-TextButton11.TextWrapped = true
-TextLabel12.Name = "Tele_Title"
-TextLabel12.Parent = Frame1
-TextLabel12.Position = UDim2.new(0.388641417, 0, 0.429268301, 0)
-TextLabel12.Size = UDim2.new(0.222717151, 0, 0.0682926849, 0)
-TextLabel12.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel12.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel12.BackgroundTransparency = 1
-TextLabel12.Font = Enum.Font.Unknown
-TextLabel12.FontSize = Enum.FontSize.Size14
-TextLabel12.Text = "TELEPORTS"
-TextLabel12.TextColor = BrickColor.new("Institutional white")
-TextLabel12.TextColor3 = Color3.new(1, 1, 1)
-TextLabel12.TextScaled = true
-TextLabel12.TextSize = 14
-TextLabel12.TextWrap = true
-TextLabel12.TextWrapped = true
-TextLabel13.Name = "Tele_Note"
-TextLabel13.Parent = Frame1
-TextLabel13.Position = UDim2.new(0.298440993, 0, 0.480487794, 0)
-TextLabel13.Size = UDim2.new(0.404231638, 0, 0.0390243903, 0)
-TextLabel13.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel13.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel13.BackgroundTransparency = 1
-TextLabel13.Font = Enum.Font.Nunito
-TextLabel13.FontSize = Enum.FontSize.Size14
-TextLabel13.Text = "NOTE: These are extremely noticable."
-TextLabel13.TextColor = BrickColor.new("Institutional white")
-TextLabel13.TextColor3 = Color3.new(1, 1, 1)
-TextLabel13.TextScaled = true
-TextLabel13.TextSize = 14
-TextLabel13.TextWrap = true
-TextLabel13.TextWrapped = true
-TextLabel14.Name = "Tele_Note"
-TextLabel14.Parent = Frame1
-TextLabel14.Position = UDim2.new(0.298440993, 0, 0.519512177, 0)
-TextLabel14.Size = UDim2.new(0.404231638, 0, 0.048780486, 0)
-TextLabel14.BackgroundColor = BrickColor.new("Institutional white")
-TextLabel14.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel14.BackgroundTransparency = 1
-TextLabel14.Font = Enum.Font.Unknown
-TextLabel14.FontSize = Enum.FontSize.Size14
-TextLabel14.Text = "USE WITH CAUTION!"
-TextLabel14.TextColor = BrickColor.new("Deep orange")
-TextLabel14.TextColor3 = Color3.new(1, 0.501961, 0)
-TextLabel14.TextScaled = true
-TextLabel14.TextSize = 14
-TextLabel14.TextWrap = true
-TextLabel14.TextWrapped = true
-TextButton15.Name = "S1TP"
-TextButton15.Parent = Frame1
-TextButton15.Position = UDim2.new(0.0155902002, 0, 0.673170745, 0)
-TextButton15.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton15.BackgroundColor = BrickColor.new("Black metallic")
-TextButton15.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton15.BackgroundTransparency = 0.30000001192092896
-TextButton15.AutoButtonColor = false
-TextButton15.Font = Enum.Font.Unknown
-TextButton15.FontSize = Enum.FontSize.Size14
-TextButton15.Text = "S-1"
-TextButton15.TextColor = BrickColor.new("Institutional white")
-TextButton15.TextColor3 = Color3.new(1, 1, 1)
-TextButton15.TextScaled = true
-TextButton15.TextSize = 14
-TextButton15.TextWrap = true
-TextButton15.TextWrapped = true
-TextButton16.Name = "S2TP"
-TextButton16.Parent = Frame1
-TextButton16.Position = UDim2.new(0.0155902002, 0, 0.746341467, 0)
-TextButton16.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton16.BackgroundColor = BrickColor.new("Black metallic")
-TextButton16.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton16.BackgroundTransparency = 0.30000001192092896
-TextButton16.AutoButtonColor = false
-TextButton16.Font = Enum.Font.Unknown
-TextButton16.FontSize = Enum.FontSize.Size14
-TextButton16.Text = "S-2"
-TextButton16.TextColor = BrickColor.new("Institutional white")
-TextButton16.TextColor3 = Color3.new(1, 1, 1)
-TextButton16.TextScaled = true
-TextButton16.TextSize = 14
-TextButton16.TextWrap = true
-TextButton16.TextWrapped = true
-TextButton17.Name = "S3TP"
-TextButton17.Parent = Frame1
-TextButton17.Position = UDim2.new(0.0155902002, 0, 0.82195121, 0)
-TextButton17.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton17.BackgroundColor = BrickColor.new("Black metallic")
-TextButton17.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton17.BackgroundTransparency = 0.30000001192092896
-TextButton17.AutoButtonColor = false
-TextButton17.Font = Enum.Font.Unknown
-TextButton17.FontSize = Enum.FontSize.Size14
-TextButton17.Text = "S-3"
-TextButton17.TextColor = BrickColor.new("Institutional white")
-TextButton17.TextColor3 = Color3.new(1, 1, 1)
-TextButton17.TextScaled = true
-TextButton17.TextSize = 14
-TextButton17.TextWrap = true
-TextButton17.TextWrapped = true
-TextButton18.Name = "CRTP"
-TextButton18.Parent = Frame1
-TextButton18.Position = UDim2.new(0.0155902002, 0, 0.89268291, 0)
-TextButton18.Size = UDim2.new(0.968819618, 0, 0.0560975596, 0)
-TextButton18.BackgroundColor = BrickColor.new("Black metallic")
-TextButton18.BackgroundColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-TextButton18.BackgroundTransparency = 0.30000001192092896
-TextButton18.AutoButtonColor = false
-TextButton18.Font = Enum.Font.Unknown
-TextButton18.FontSize = Enum.FontSize.Size14
-TextButton18.Text = "Control Room"
-TextButton18.TextColor = BrickColor.new("Institutional white")
-TextButton18.TextColor3 = Color3.new(1, 1, 1)
-TextButton18.TextScaled = true
-TextButton18.TextSize = 14
-TextButton18.TextWrap = true
-TextButton18.TextWrapped = true
+local Toggled966 = false;
+local ToggledESP = false;
 
--- UI Corners
-UICorner1 = Instance.new("UICorner", Frame1);
-UICorner1.CornerRadius = UDim.new(0, 16);
-UICorner2 = Instance.new("UICorner", TextButton7);
-UICorner2.CornerRadius = UDim.new(0, 8);
-UICorner3 = Instance.new("UICorner", TextButton8);
-UICorner3.CornerRadius = UDim.new(0, 8);
-UICorner4 = Instance.new("UICorner", TextButton9);
-UICorner4.CornerRadius = UDim.new(0, 8);
-UICorner5 = Instance.new("UICorner", TextButton10);
-UICorner5.CornerRadius = UDim.new(0, 8);
-UICorner6 = Instance.new("UICorner", TextButton11);
-UICorner6.CornerRadius = UDim.new(0, 8);
-UICorner7 = Instance.new("UICorner", TextButton15);
-UICorner7.CornerRadius = UDim.new(0, 8);
-UICorner8 = Instance.new("UICorner", TextButton16);
-UICorner8.CornerRadius = UDim.new(0, 8);
-UICorner9 = Instance.new("UICorner", TextButton17);
-UICorner9.CornerRadius = UDim.new(0, 8);
-UICorner10 = Instance.new("UICorner", TextButton18);
-UICorner10.CornerRadius = UDim.new(0, 8);
-UICorner11 = Instance.new("UICorner", TextButton5);
-UICorner11.CornerRadius = UDim.new(0, 8);
+function getRoot(char)
+	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+	return rootPart
+end
 
--- Code
+COREGUI = game:GetService("CoreGui")
+Players = game:GetService("Players")
 
--- Kill Switch
-TextButton5.MouseEnter:Connect(function()
-	TextLabel6.Visible = true;
-end);
-TextButton5.MouseLeave:Connect(function()
-	TextLabel6.Visible = false;
-end);
-TextButton5.MouseButton1Click:Connect(function()
-	ScreenGui0:Destroy();
-end);
+function round(num, numDecimalPlaces)
+	local mult = 10^(numDecimalPlaces or 0)
+	return math.floor(num * mult + 0.5) / mult
+end
 
--- P to Show/Hide
-local UIS = game:GetService("UserInputService")
-UIS.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.P then
-		ScreenGui0.Enabled = not ScreenGui0.Enabled;
-	end
-end)
-
--- SCP-966
-TextButton7.MouseButton1Click:Connect(function()
-	if workspace:FindFirstChild("SCP-966") then
-		local SCP966 = workspace:FindFirstChild("SCP-966");
-		for _, value in next, SCP966:GetDescendants() do
-			if not value:IsA("BasePart") then
-				if value:IsA("MeshPart") then
-					if value.Name ~= "HumanoidRootPart" then
-						value.Transparency = 0;
-					end
-				end
-			elseif value.Name ~= "HumanoidRootPart" then
-				value.Transparency = 0;
+function ESP(plr)
+	task.spawn(function()
+		for i,v in pairs(COREGUI:GetChildren()) do
+			if v.Name == plr.Name..'_ESP' then
+				v:Destroy()
 			end
 		end
-	end
+		wait()
+		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not COREGUI:FindFirstChild(plr.Name..'_ESP') then
+			local ESPholder = Instance.new("Folder")
+			ESPholder.Name = plr.Name..'_ESP'
+			ESPholder.Parent = COREGUI
+			repeat wait(1) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
+			for b,n in pairs (plr.Character:GetChildren()) do
+				if (n:IsA("BasePart")) then
+					local a = Instance.new("BoxHandleAdornment")
+					a.Name = plr.Name
+					a.Parent = ESPholder
+					a.Adornee = n
+					a.AlwaysOnTop = true
+					a.ZIndex = 10
+					a.Size = n.Size
+					a.Transparency = 0.5
+					a.Color = plr.TeamColor
+				end
+			end
+			if plr.Character and plr.Character:FindFirstChild('Head') then
+				local BillboardGui = Instance.new("BillboardGui")
+				local TextLabel = Instance.new("TextLabel")
+				BillboardGui.Adornee = plr.Character.Head
+				BillboardGui.Name = plr.Name
+				BillboardGui.Parent = ESPholder
+				BillboardGui.Size = UDim2.new(0, 100, 0, 150)
+				BillboardGui.StudsOffset = Vector3.new(0, 1, 0)
+				BillboardGui.AlwaysOnTop = true
+				TextLabel.Parent = BillboardGui
+				TextLabel.BackgroundTransparency = 1
+				TextLabel.Position = UDim2.new(0, 0, 0, -50)
+				TextLabel.Size = UDim2.new(0, 100, 0, 100)
+				TextLabel.Font = Enum.Font.SourceSansSemibold
+				TextLabel.TextSize = 20
+				TextLabel.TextColor3 = Color3.new(1, 1, 1)
+				TextLabel.TextStrokeTransparency = 0
+				TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+				TextLabel.Text = 'Name: '..plr.Name
+				TextLabel.ZIndex = 10
+				local espLoopFunc
+				local teamChange
+				local addedFunc
+				addedFunc = plr.CharacterAdded:Connect(function()
+					if ToggledESP then
+						espLoopFunc:Disconnect()
+						teamChange:Disconnect()
+						ESPholder:Destroy()
+						repeat wait(1) until getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
+						ESP(plr)
+						addedFunc:Disconnect()
+					else
+						teamChange:Disconnect()
+						addedFunc:Disconnect()
+					end
+				end)
+				teamChange = plr:GetPropertyChangedSignal("TeamColor"):Connect(function()
+					if ToggledESP then
+						espLoopFunc:Disconnect()
+						addedFunc:Disconnect()
+						ESPholder:Destroy()
+						repeat wait(1) until getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
+						ESP(plr)
+						teamChange:Disconnect()
+					else
+						teamChange:Disconnect()
+					end
+				end)
+				local function espLoop()
+					if COREGUI:FindFirstChild(plr.Name..'_ESP') then
+						if plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid") and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+							local pos = math.floor((getRoot(Players.LocalPlayer.Character).Position - getRoot(plr.Character).Position).magnitude)
+							TextLabel.Text = 'Name: '..plr.Name..' | Health: '..round(plr.Character:FindFirstChildOfClass('Humanoid').Health, 1)..' | Studs: '..pos
+						end
+					else
+						teamChange:Disconnect()
+						addedFunc:Disconnect()
+						espLoopFunc:Disconnect()
+					end
+				end
+				espLoopFunc = game:GetService("RunService").RenderStepped:Connect(espLoop)
+			end
+		end
+	end)
+end
+
+-- INITIALIZE
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local colors = {
+	SchemeColor = Color3.fromRGB(149, 149, 149),
+	Background = Color3.fromRGB(71, 71, 71);
+	Header = Color3.fromRGB(93, 93, 93),
+	TextColor = Color3.fromRGB(255,255,255),
+	ElementColor = Color3.fromRGB(93,93,93)
+}
+
+local Window = Library.CreateLib("Kronos - III | By VxlidDev", "BloodTheme");
+
+local HitboxValue = 5;
+
+-- Functions
+local FunctionsTab = Window:NewTab("Functions")
+local BISection = FunctionsTab:NewSection("Built-In")
+
+BISection:NewButton("Load Infinite Yield", "Loads Infinite Yield for you.", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))();
 end);
 
--- Get all CD Shop Items
-TextButton8.MouseButton1Click:Connect(function()
+BISection:NewButton("Load DEX Explorer", "Loads the explorer window, allowing you to see all files in game.", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))();
+end);
+
+BISection:NewButton("Load Remote Spy", "Loads a new RSpy Window so you can see all remotes being fired.", function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))();
+end);
+
+local CMSection = FunctionsTab:NewSection("Custom Made")
+
+CMSection:NewButton("Buy all CD Items", "Must be on CD team, and it will still cost credits.", function()
 	local ReplicatedStorage = game:GetService("ReplicatedStorage");
 	local CDShop_Remote = ReplicatedStorage:WaitForChild("CDShop");
 	local Wait_Time = 0.2;
@@ -404,20 +160,15 @@ TextButton8.MouseButton1Click:Connect(function()
 	getCDItems();
 end);
 
--- Load IY
-TextButton9.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end);
-
--- Load DEX
-TextButton10.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))()
+CMSection:NewToggle("Make 966 Visible", "Makes SCP-966 Visible for you to see them, as it's invisible in vanilla.", function(state)
+	Toggled966 = state
 end);
 
 -- Teleports
+local TeleportsTab = Window:NewTab("Teleports");
+local SiteSection = TeleportsTab:NewSection("Site")
 
--- CDCZ VA
-TextButton11.MouseButton1Click:Connect(function()
+SiteSection:NewButton("CDCZ VA", "Teleports you to the Viewing Area.", function()
 	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
 
 	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
@@ -427,10 +178,9 @@ TextButton11.MouseButton1Click:Connect(function()
 			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
 		end
 	end
-end)
+end);
 
--- S1
-TextButton15.MouseButton1Click:Connect(function()
+SiteSection:NewButton("S-1", "Teleports you to S-1.", function()
 	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
 
 	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
@@ -440,10 +190,9 @@ TextButton15.MouseButton1Click:Connect(function()
 			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
 		end
 	end
-end)
+end);
 
--- S2
-TextButton16.MouseButton1Click:Connect(function()
+SiteSection:NewButton("S-2", "Teleports you to S-2.", function()
 	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
 
 	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
@@ -453,10 +202,9 @@ TextButton16.MouseButton1Click:Connect(function()
 			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
 		end
 	end
-end)
+end);
 
--- S3
-TextButton17.MouseButton1Click:Connect(function()
+SiteSection:NewButton("S-3", "Teleports you to S-3.", function()
 	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
 
 	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
@@ -466,10 +214,9 @@ TextButton17.MouseButton1Click:Connect(function()
 			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
 		end
 	end
-end)
+end);
 
--- Control Room (S1)
-TextButton18.MouseButton1Click:Connect(function()
+SiteSection:NewButton("Control Room", "Teleports you to the site control room.", function()
 	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
 
 	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
@@ -479,4 +226,135 @@ TextButton18.MouseButton1Click:Connect(function()
 			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
 		end
 	end
-end)
+end);
+
+SiteSection:NewButton("Breach Shelter", "Teleports you to the site breach shelter.", function()
+	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+	if TPLocations then
+		local VA = TPLocations:FindFirstChild("BS");
+		if VA then
+			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+		end
+	end
+end);
+
+SiteSection:NewDropdown("SCPs", "Teleports you to SCPs", {}, function(currentOption)
+	print(currentOption)
+end);
+
+-- ESP
+local OtherTab = Window:NewTab("Other");
+local OtherSection = OtherTab:NewSection("Other");
+
+OtherSection:NewToggle("Toggle ESP", "Toggles ESP on/off.", function(state)
+	if state then
+		ToggledESP = true;
+		for i,v in pairs(game.Players:GetPlayers()) do
+			if v.ClassName == "Player" and v.Name ~= game.Players.LocalPlayer.Name then
+				ESP(v);
+			end
+		end
+	else
+		ToggledESP = false;
+		for i,c in pairs(COREGUI:GetChildren()) do
+			if string.sub(c.Name, -4) == '_ESP' then
+				c:Destroy();
+			end
+		end
+	end
+end);
+
+OtherSection:NewSlider("Hitbox Size", "Change the size of the hitbox.", 20, 1, function(s)
+	HitboxValue = s;
+end);
+
+local function getCombativePlayers()
+	local plrs = {};
+	local CombativeTeams = {
+		"Security Corps",
+		"Special Operations",
+		"Mobile Task Force",
+		"DOCIAS",
+		"Global Occult Coalition"
+	}
+	for i,v in pairs(game.Players:GetPlayers()) do
+		print('A')
+		local teamName = v.Team.Name
+		print(teamName)
+		if teamName == "Security Corps" or teamName == "Special Operations" or teamName == "Mobile Task Force" or teamName == "DOCIAS" or teamName == "Global Occult Coalition" then
+			print('Yes.')
+			if v.Name ~= game.Players.LocalPlayer.Name then plrs[#plrs + 1] = v.Name end
+		end
+	end
+
+	return plrs
+end
+
+OtherSection:NewButton("Set Hitbox of Combatants", "Sets the hitbox of the combatives to the size you have set.", function()
+	local size = HitboxValue;
+
+	local players = getCombativePlayers();
+
+	
+	for i,v in pairs(players) do
+		print(v);
+		if Players[v].Character:FindFirstChild('Head') then
+			local Size = Vector3.new(size,size,size);
+			local Root = Players[v].Character:FindFirstChild('HumanoidRootPart');
+			if Root:IsA("BasePart") then
+				Root.Size = Size
+				if ToggledESP then -- updates esp to show new hitbox, if esp is enabled
+					for i,v in pairs(game.Players:GetPlayers()) do
+						if v.ClassName == "Player" and v.Name ~= game.Players.LocalPlayer.Name then
+							ESP(v);
+						end
+					end
+				end
+			end
+		end
+	end
+end);
+
+local SettingsTab = Window:NewTab("Settings");
+local SettingsSection = SettingsTab:NewSection("Settings");
+
+SettingsSection:NewKeybind("Toggle Keybind", "Set the toggle keybind.", Enum.KeyCode.N, function()
+	Library:ToggleUI()
+end);
+
+-- Toggle Handler
+game:GetService("RunService").RenderStepped:Connect(function()
+	if Toggled966 == true then
+		if workspace:FindFirstChild("SCP-966") then
+			local SCP966 = workspace:FindFirstChild("SCP-966");
+			for _, value in next, SCP966:GetDescendants() do
+				if not value:IsA("BasePart") then
+					if value:IsA("MeshPart") then
+						if value.Name ~= "HumanoidRootPart" then
+							value.Transparency = 0;
+						end
+					end
+				elseif value.Name ~= "HumanoidRootPart" then
+					value.Transparency = 0;
+				end
+			end
+		end
+	else
+		if workspace:FindFirstChild("SCP-966") then
+			local SCP966 = workspace:FindFirstChild("SCP-966");
+			for _, value in next, SCP966:GetDescendants() do
+				if not value:IsA("BasePart") then
+					if value:IsA("MeshPart") then
+						if value.Name ~= "HumanoidRootPart" then
+							value.Transparency = 1;
+						end
+					end
+				elseif value.Name ~= "HumanoidRootPart" then
+					value.Transparency = 1;
+				end
+			end
+		end
+	end
+end);
