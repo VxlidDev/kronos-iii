@@ -1,360 +1,413 @@
--- VxlidDev
--- lmao
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/VxlidDev/kronos-iii/main/RayField.lua'))()
 
-local Toggled966 = false;
-local ToggledESP = false;
+local Window = Rayfield:CreateWindow({
+	Name = "Kronos - III Exploit Panel",
+	LoadingTitle = "Kronos - III Exploit Loader",
+	LoadingSubtitle = "by VxlidDev",
+	ConfigurationSaving = {
+		Enabled = false
+	},
+	KeySystem = true, -- Set this to true to use their key system
+	KeySettings = {
+		Title = "Kronos Hub",
+		Subtitle = "Key System",
+		Note = "Ask Vxl",
+		SaveKey = true,
+		Key = "*e^s40C5z"
+	}
+})
 
-function getRoot(char)
-	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
-	return rootPart
-end
+local Tab = Window:CreateTab("Scripting", 6022668888) -- Title, Image
 
-COREGUI = game:GetService("CoreGui")
-Players = game:GetService("Players")
+Tab:CreateSection("Pre-Made", true)
+Tab:CreateButton({
+	Name = "Load IY",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end,
+})
+Tab:CreateButton({
+	Name = "Load Dex",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))()
+	end,
+})
+Tab:CreateButton({
+	Name = "Load SimpleSpy",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+	end,
+})
 
-function round(num, numDecimalPlaces)
-	local mult = 10^(numDecimalPlaces or 0)
-	return math.floor(num * mult + 0.5) / mult
-end
+Tab:CreateSection("Custom Made", true);
+Tab:CreateButton({
+	Name = "Get all CD Shop Items (Costs Credits)",
+	Callback = function(Value)
+		local remote = game:GetService("ReplicatedStorage"):WaitForChild("CDShop");
+		local wait_time = 0.2
 
-function ESP(plr)
-	task.spawn(function()
-		for i,v in pairs(COREGUI:GetChildren()) do
-			if v.Name == plr.Name..'_ESP' then
-				v:Destroy()
+		local function call(b)
+			if b then task.wait(11) end
+			remote:FireServer("L4Access")
+			task.wait(wait_time)
+			remote:FireServer("M4A1")
+			task.wait(wait_time)
+			remote:FireServer("HealGun")
+			task.wait(wait_time)
+			remote:FireServer("G18") 
+		end
+
+		call(false);
+	end
+})
+
+Tab:CreateButton({
+	Name = "Team To Hostile (M4, Medibag, HealGun)",
+	Callback = function(Value)
+		if game.Players.LocalPlayer.Team.Name ~= "D Class Personnel" then
+			return Rayfield:Notify({
+				Title = "not on cd team",
+				Content = "your nigger ass isnt on the class d team",
+				Duration = 3,
+				Image = 7072725208
+			});
+		end
+
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		-- character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-20.718, 316.45, 238.814)
+
+		local part = nil;
+
+		for i,v in pairs(game.Workspace:GetDescendants()) do
+			if v.Name == "Part" and v.Size == Vector3.new(6.4, 1.6, 5.8) then
+				part = v;
+				break;
 			end
 		end
-		wait()
-		if plr.Character and plr.Name ~= Players.LocalPlayer.Name and not COREGUI:FindFirstChild(plr.Name..'_ESP') then
-			local ESPholder = Instance.new("Folder")
-			ESPholder.Name = plr.Name..'_ESP'
-			ESPholder.Parent = COREGUI
-			repeat wait(1) until plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
-			for b,n in pairs (plr.Character:GetChildren()) do
-				if (n:IsA("BasePart")) then
-					local a = Instance.new("BoxHandleAdornment")
-					a.Name = plr.Name
-					a.Parent = ESPholder
-					a.Adornee = n
-					a.AlwaysOnTop = true
-					a.ZIndex = 10
-					a.Size = n.Size
-					a.Transparency = 0.5
-					a.Color = plr.TeamColor
-				end
-			end
-			if plr.Character and plr.Character:FindFirstChild('Head') then
-				local BillboardGui = Instance.new("BillboardGui")
-				local TextLabel = Instance.new("TextLabel")
-				BillboardGui.Adornee = plr.Character.Head
-				BillboardGui.Name = plr.Name
-				BillboardGui.Parent = ESPholder
-				BillboardGui.Size = UDim2.new(0, 100, 0, 150)
-				BillboardGui.StudsOffset = Vector3.new(0, 1, 0)
-				BillboardGui.AlwaysOnTop = true
-				TextLabel.Parent = BillboardGui
-				TextLabel.BackgroundTransparency = 1
-				TextLabel.Position = UDim2.new(0, 0, 0, -50)
-				TextLabel.Size = UDim2.new(0, 100, 0, 100)
-				TextLabel.Font = Enum.Font.SourceSansSemibold
-				TextLabel.TextSize = 20
-				TextLabel.TextColor3 = Color3.new(1, 1, 1)
-				TextLabel.TextStrokeTransparency = 0
-				TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
-				TextLabel.Text = 'Name: '..plr.Name
-				TextLabel.ZIndex = 10
-				local espLoopFunc
-				local teamChange
-				local addedFunc
-				addedFunc = plr.CharacterAdded:Connect(function()
-					if ToggledESP then
-						espLoopFunc:Disconnect()
-						teamChange:Disconnect()
-						ESPholder:Destroy()
-						repeat wait(1) until getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
-						ESP(plr)
-						addedFunc:Disconnect()
-					else
-						teamChange:Disconnect()
-						addedFunc:Disconnect()
-					end
-				end)
-				teamChange = plr:GetPropertyChangedSignal("TeamColor"):Connect(function()
-					if ToggledESP then
-						espLoopFunc:Disconnect()
-						addedFunc:Disconnect()
-						ESPholder:Destroy()
-						repeat wait(1) until getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid")
-						ESP(plr)
-						teamChange:Disconnect()
-					else
-						teamChange:Disconnect()
-					end
-				end)
-				local function espLoop()
-					if COREGUI:FindFirstChild(plr.Name..'_ESP') then
-						if plr.Character and getRoot(plr.Character) and plr.Character:FindFirstChildOfClass("Humanoid") and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
-							local pos = math.floor((getRoot(Players.LocalPlayer.Character).Position - getRoot(plr.Character).Position).magnitude)
-							TextLabel.Text = 'Name: '..plr.Name..' | Health: '..round(plr.Character:FindFirstChildOfClass('Humanoid').Health, 1)..' | Studs: '..pos
-						end
-					else
-						teamChange:Disconnect()
-						addedFunc:Disconnect()
-						espLoopFunc:Disconnect()
+
+		if part then
+			local partorgcframe = part.CFrame;
+			part.CFrame = character:WaitForChild("HumanoidRootPart").CFrame;
+			task.wait(1);
+			part.CFrame = partorgcframe;
+		else
+			local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+			character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-20.718, 316.45, 238.814)
+		end
+	end
+})
+
+Tab:CreateDropdown({
+	Name = "CD Shop",
+	Options = {"Riot", "Glock", "Heal Gun", "L4 Access", "M4A1"},
+	CurrentOption = "Riot",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+		local options = {
+			["L4 Access"] = "L4Access",
+			["M4A1"] = "M4A1",
+			["Heal Gun"] = "HealGun",
+			["Glock"] = "G18",
+			["Riot"] = "Riot"
+		}
+
+		local option = options[Option];
+
+		local remote = game:GetService("ReplicatedStorage"):WaitForChild("CDShop");
+		remote:FireServer(option);
+	end,
+})
+
+Tab:CreateToggle({
+	Name = "Make 966 Visible",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		-- The function that takes place when the toggle is pressed
+		-- The variable (Value) is a boolean on whether the toggle is true or false
+		for i,v in pairs(workspace['SCP-966']:GetDescendants()) do
+			if not (v:IsA("BasePart")) then
+				if (v:IsA("MeshPart")) then
+					if (v.Name ~= "HumanoidRootPart") then
+						v.Transparency = Value == true and 0 or 1
 					end
 				end
-				espLoopFunc = game:GetService("RunService").RenderStepped:Connect(espLoop)
+
+			elseif (v.Name ~= "HumanoidRootPart") then
+				v.Transparency = Value == true and 0 or 1
 			end
 		end
-	end)
-end
+	end,
+});
 
--- INITIALIZE
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local TeleportTab = Window:CreateTab("Teleports", 6034503375)
 
-local colors = {
-	SchemeColor = Color3.fromRGB(149, 149, 149),
-	Background = Color3.fromRGB(71, 71, 71);
-	Header = Color3.fromRGB(93, 93, 93),
-	TextColor = Color3.fromRGB(255,255,255),
-	ElementColor = Color3.fromRGB(93,93,93)
+TeleportTab:CreateLabel("This section is extremely noticeable! Proceed with high caution.")
+TeleportTab:CreateSection("Intel Teleports", true)
+
+TeleportTab:CreateButton({
+	Name = "CDCZ VA",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("VA");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+TeleportTab:CreateButton({
+	Name = "S-1",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("Sector-1");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+TeleportTab:CreateButton({
+	Name = "S-2",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("Sector-2");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+TeleportTab:CreateButton({
+	Name = "S-3",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("Sector-3");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+TeleportTab:CreateButton({
+	Name = "Control Room",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("CR");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+TeleportTab:CreateButton({
+	Name = "Breach Shelter",
+	Callback = function()
+		local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+		local TPLocations = game.Workspace:FindFirstChild("TPLocations");
+		if TPLocations then
+			local VA = TPLocations:FindFirstChild("BS");
+			if VA then
+				character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
+			end
+		end
+	end
+})
+
+TeleportTab:CreateSection("Other Teleports", true)
+TeleportTab:CreateDropdown({
+	Name = "S-1 Spawns",
+	Options = {
+		"Pick One",
+		"Engineering",
+		"Foundation Personnel",
+		"Scientific",
+		"Medical",
+		"DEA",
+		"EC",
+		"GOC",
+		"MaD",
+		"Security Corps"
+	},
+	CurrentOption = "Pick One",
+	Flag = "Dropdown2",
+	Callback = function(Option)
+		if Option ~= "Pick One" then
+			local Teleports = {
+				["Engineering"] = CFrame.new(-595.514, 357.652, 197.183),
+				["Foundation Personnel"] = CFrame.new(-737.426, 357.392, 12.059),
+				["Scientific"] = CFrame.new(-660.361, 341.365, -214.844),
+				["Medical"] = CFrame.new(-822.846, 342.384, 104.056),
+				["DEA"] = CFrame.new(-625.829, 342.347, -24.722),
+				["EC"] = CFrame.new(-569.746, 341.135, -74.272),
+				["GOC"] = CFrame.new(-926.75, 289.5, 74.248),
+				["MaD"] = CFrame.new(-942.186, 418.097, -58.186),
+				["Security Corps"] = CFrame.new(-514.731, 340.479, -76.457)
+			}
+
+			local pos = Teleports[Option];
+
+			if pos then
+				local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+				character:WaitForChild("HumanoidRootPart").CFrame = pos
+			end
+		end
+	end
+})
+
+TeleportTab:CreateDropdown({
+	Name = "S-2 SCPs",
+	Options = {
+		"Pick One",
+		"SCP-500 (U)",
+		"SCP-409 (U)",
+		"SCP-999 (S)",
+		"SCP-035 (K)",
+		"SCP-008 (K)",
+		"SCP-472 (E)",
+		"SCP-049 (E)",
+		"SCP-173 (E)"
+	},
+	CurrentOption = "Pick One",
+	Flag = "Dropdown3",
+	Callback = function(Option)
+		if Option ~= "Pick One" then
+			local Teleports = {
+				["SCP-500 (U)"] = CFrame.new(-404.972, 330.67, 72.251),
+				["SCP-409 (U)"] = CFrame.new(-344.51, 332.532, 85.089),
+				["SCP-999 (S)"] = CFrame.new(-496.169, 330.804, 181.975),
+				["SCP-035 (K)"] = CFrame.new(-436.388, 330.523, 170.949),
+				["SCP-008 (K)"] = CFrame.new(-481.858, 331.763, 136.405),
+				["SCP-472 (E)"] = CFrame.new(-363.915, 331.392, 170.716),
+				["SCP-049 (E)"] = CFrame.new(-221.254, 321.469, 223.861),
+				["SCP-173 (E)"] = CFrame.new(-309.985, 321.057, 249.858),
+			}
+
+			local pos = Teleports[Option];
+
+			if pos then
+				local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
+
+				character:WaitForChild("HumanoidRootPart").CFrame = pos
+			end
+		end
+	end
+})
+
+local CameraTab = Window:CreateTab("Camera", 6031770997);
+
+local People = {
+	game.Players.LocalPlayer.Name
 }
 
-local Window = Library.CreateLib("Kronos - III | By VxlidDev", "BloodTheme");
-
-local HitboxValue = 5;
-
--- Functions
-local FunctionsTab = Window:NewTab("Functions")
-local BISection = FunctionsTab:NewSection("Built-In")
-
-BISection:NewButton("Load Infinite Yield", "Loads Infinite Yield for you.", function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))();
-end);
-
-BISection:NewButton("Load DEX Explorer", "Loads the explorer window, allowing you to see all files in game.", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))();
-end);
-
-BISection:NewButton("Load Remote Spy", "Loads a new RSpy Window so you can see all remotes being fired.", function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))();
-end);
-
-local CMSection = FunctionsTab:NewSection("Custom Made")
-
-CMSection:NewButton("Buy all CD Items", "Must be on CD team, and it will still cost credits.", function()
-	local ReplicatedStorage = game:GetService("ReplicatedStorage");
-	local CDShop_Remote = ReplicatedStorage:WaitForChild("CDShop");
-	local Wait_Time = 0.2;
-
-	local function getCDItems()
-		CDShop_Remote:FireServer("L4Access"); -- buys L4 Access
-		task.wait(Wait_Time);
-		CDShop_Remote:FireServer("M4A1"); -- buys M4A1
-		task.wait(Wait_Time);
-		CDShop_Remote:FireServer("HealGun"); -- buys Heal Gun
-		task.wait(Wait_Time);
-		CDShop_Remote:FireServer("G18"); -- buys G18
+for i,v in pairs(game.Players:GetPlayers()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
+		People[#People + 1] = v.Name;
 	end
-
-	getCDItems();
-end);
-
-CMSection:NewToggle("Make 966 Visible", "Makes SCP-966 Visible for you to see them, as it's invisible in vanilla.", function(state)
-	Toggled966 = state
-end);
-
--- Teleports
-local TeleportsTab = Window:NewTab("Teleports");
-local SiteSection = TeleportsTab:NewSection("Site")
-
-SiteSection:NewButton("CDCZ VA", "Teleports you to the Viewing Area.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("VA");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewButton("S-1", "Teleports you to S-1.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("Sector-1");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewButton("S-2", "Teleports you to S-2.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("Sector-2");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewButton("S-3", "Teleports you to S-3.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("Sector-3");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewButton("Control Room", "Teleports you to the site control room.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("CR");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewButton("Breach Shelter", "Teleports you to the site breach shelter.", function()
-	local character = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait();
-
-	local TPLocations = game.Workspace:FindFirstChild("TPLocations");
-	if TPLocations then
-		local VA = TPLocations:FindFirstChild("BS");
-		if VA then
-			character:WaitForChild("HumanoidRootPart").CFrame = VA.CFrame;
-		end
-	end
-end);
-
-SiteSection:NewDropdown("SCPs", "Teleports you to SCPs", {}, function(currentOption)
-	print(currentOption)
-end);
-
--- ESP
-local OtherTab = Window:NewTab("Other");
-local OtherSection = OtherTab:NewSection("Other");
-
-OtherSection:NewToggle("Toggle ESP", "Toggles ESP on/off.", function(state)
-	if state then
-		ToggledESP = true;
-		for i,v in pairs(game.Players:GetPlayers()) do
-			if v.ClassName == "Player" and v.Name ~= game.Players.LocalPlayer.Name then
-				ESP(v);
-			end
-		end
-	else
-		ToggledESP = false;
-		for i,c in pairs(COREGUI:GetChildren()) do
-			if string.sub(c.Name, -4) == '_ESP' then
-				c:Destroy();
-			end
-		end
-	end
-end);
-
-OtherSection:NewSlider("Hitbox Size", "Change the size of the hitbox.", 20, 1, function(s)
-	HitboxValue = s;
-end);
-
-local function getCombativePlayers()
-	local plrs = {};
-	local CombativeTeams = {
-		"Security Corps",
-		"Special Operations",
-		"Mobile Task Force",
-		"DOCIAS",
-		"Global Occult Coalition"
-	}
-	for i,v in pairs(game.Players:GetPlayers()) do
-		print('A')
-		local teamName = v.Team.Name
-		print(teamName)
-		if teamName == "Security Corps" or teamName == "Special Operations" or teamName == "Mobile Task Force" or teamName == "DOCIAS" or teamName == "Global Occult Coalition" then
-			print('Yes.')
-			if v.Name ~= game.Players.LocalPlayer.Name then plrs[#plrs + 1] = v.Name end
-		end
-	end
-
-	return plrs
 end
 
-OtherSection:NewButton("Set Hitbox of Combatants", "Sets the hitbox of the combatives to the size you have set.", function()
-	local size = HitboxValue;
+local CurrentlyViewing = nil;
 
-	local players = getCombativePlayers();
+local ViewDropdown = CameraTab:CreateDropdown({
+	Name = "View",
+	Options = People,
+	CurrentOption = game.Players.LocalPlayer.Name,
+	Flag = "Dropdown2",
+	Callback = function(option)
+		local playerToView = game.Players:FindFirstChild(option);
 
+		if playerToView then
+			local character = playerToView.Character or playerToView.CharacterAdded:Wait();
+
+			if character then
+				if option == game.Players.LocalPlayer.Name then CurrentlyViewing = nil; else CurrentlyViewing = game.Players[option].Name end
+				
+				game.Workspace.CurrentCamera.CameraSubject = character.Humanoid;
+			end
+		end
+	end,
+})
+
+Tab:CreateButton({
+	Name = "Destroy UI",
+	Callback = function()
+		Rayfield:Destroy()
+	end,
+})
+
+game.Players.PlayerAdded:Connect(function(p)
+	People[#People + 1] = p.Name;
+
+	ViewDropdown:Refresh(People, CurrentlyViewing or game.Players.LocalPlayer.Name);
+end);
+
+game.Players.PlayerRemoving:Connect(function(p)
+	if CurrentlyViewing == p.Name then
+		CurrentlyViewing = nil;
+		game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid;
+		
+		Rayfield:Notify({
+			Title = "Stopped Viewing",
+			Content = "The person you were viewing left the game.",
+			Duration = 5,
+			Image = 6031763426,
+			Actions = {
+				Ignore = {
+					Name = "Ok!"
+				}
+			}
+		});
+	end
 	
-	for i,v in pairs(players) do
-		print(v);
-		if Players[v].Character:FindFirstChild('Head') then
-			local Size = Vector3.new(size,size,size);
-			local Root = Players[v].Character:FindFirstChild('HumanoidRootPart');
-			if Root:IsA("BasePart") then
-				Root.Size = Size
-				if ToggledESP then -- updates esp to show new hitbox, if esp is enabled
-					for i,v in pairs(game.Players:GetPlayers()) do
-						if v.ClassName == "Player" and v.Name ~= game.Players.LocalPlayer.Name then
-							ESP(v);
-						end
-					end
-				end
-			end
+	for i,v in pairs(People) do
+		if v == p.Name then
+			table.remove(People, i);
 		end
 	end
-end);
+	
+	ViewDropdown:Refresh(People, CurrentlyViewing or game.Players.LocalPlayer.Name)
+end)
 
-local SettingsTab = Window:NewTab("Settings");
-local SettingsSection = SettingsTab:NewSection("Settings");
 
-SettingsSection:NewKeybind("Toggle Keybind", "Set the toggle keybind.", Enum.KeyCode.N, function()
-	Library:ToggleUI()
-end);
+-- Extras
 
--- Toggle Handler
-game:GetService("RunService").RenderStepped:Connect(function()
-	if Toggled966 == true then
-		if workspace:FindFirstChild("SCP-966") then
-			local SCP966 = workspace:FindFirstChild("SCP-966");
-			for _, value in next, SCP966:GetDescendants() do
-				if not value:IsA("BasePart") then
-					if value:IsA("MeshPart") then
-						if value.Name ~= "HumanoidRootPart" then
-							value.Transparency = 0;
-						end
-					end
-				elseif value.Name ~= "HumanoidRootPart" then
-					value.Transparency = 0;
-				end
-			end
-		end
-	else
-		if workspace:FindFirstChild("SCP-966") then
-			local SCP966 = workspace:FindFirstChild("SCP-966");
-			for _, value in next, SCP966:GetDescendants() do
-				if not value:IsA("BasePart") then
-					if value:IsA("MeshPart") then
-						if value.Name ~= "HumanoidRootPart" then
-							value.Transparency = 1;
-						end
-					end
-				elseif value.Name ~= "HumanoidRootPart" then
-					value.Transparency = 1;
-				end
-			end
-		end
-	end
-end);
+-- getgenv().SecureMode = true -- Only Set To True If Games Are Detecting/Crashing The UI
+
+-- Rayfield:Destroy() -- Destroys UI
+
+-- Rayfield:LoadConfiguration() -- Enables Configuration Saving
+
+-- Section:Set("Section Example") -- Use To Update Section Text
+
+-- Button:Set("Button Example") -- Use To Update Button Text
+
+-- Toggle:Set(false) -- Use To Update Toggle
+
+-- Slider:Set(10) -- Use To Update Slider Value
+
+-- Label:Set("Label Example") -- Use To Update Label Text
+
+-- Paragraph:Set({Title = "Paragraph Example", Content = "Paragraph Example"}) -- Use To Update Paragraph Text
+
+-- Keybind:Set("RightCtrl") -- Keybind (string) -- Use To Update Keybind
+
+-- Dropdown:Set("Option 2") -- The new option value -- Use To Update/Set New Dropdowns
