@@ -22,6 +22,13 @@ This script uses the ArrayField UI Library, a child of Rayfield UI Library. You 
 - Obfuscated, so it cannot be patched.
 - Completely Filtering Enabled Compatible
 
+### HOW TO LOAD
+1. Open Synapse X or any other executor that supports getgenv().
+2. Paste the following into your executor:<br></br>`loadstring(game:HttpGet('https://raw.githubusercontent.com/VxlidDev/kronos-iii/main/source.lua'))()`
+3. Join [Kronos - III](https://www.roblox.com/games/12131969528/SCP-F-Kronos-III).
+4. Attach your exploit to the Roblox client.
+5. Execute.
+
 ### UPDATE LOG (mm/dd/yyyy)
 - [3/30/23] - **Made HealAura work. Turn it on and equip a heal gun to god all CDs and Hostiles in-game.** v0.0.5
 - [3/29/23] - **Made Instant Kill Anybody from Anywhere & TP Unanchored (not mine, preloaded).** v0.0.4
