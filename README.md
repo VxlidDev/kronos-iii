@@ -8,7 +8,7 @@ This script uses the ArrayField UI Library, a child of Rayfield UI Library. You 
 - Teleporting to People/SCPs.
 - Unanchored Teleporting
 - Instant Kill Anybody from Anywhere
-- Heal Aura (Soon)
+- Heal Aura 
 - Hitbox Expanding
 - Access to Site Security Cameras (Soon)
 - Auto VA Window Breaking (Soon)
@@ -23,6 +23,7 @@ This script uses the ArrayField UI Library, a child of Rayfield UI Library. You 
 - Completely Filtering Enabled Compatible
 
 ### UPDATE LOG (mm/dd/yyyy)
+- [3/30/23] - **Made HealAura work. Turn it on and equip a heal gun to god all CDs and Hostiles in-game.** v0.0.5
 - [3/29/23] - **Made Instant Kill Anybody from Anywhere & TP Unanchored (not mine, preloaded).** v0.0.4
 - [3/29/23] - **Began work on Heal Aura, this feature will allow you to instantly heal all Hostiles & CDs. Created unview when teleporting to the person you're viewing.** v0.0.3
 - [3/28/23] - **Created all TPs for SCPs.** v0.0.2
