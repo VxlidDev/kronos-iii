@@ -1,4 +1,4 @@
-# ![KronosPanel](https://tr.rbxcdn.com/e32039203a2bc5dd47d57f9621e0ec07/150/150/Image/Png)
+# ![KronosPanel]([https://tr.rbxcdn.com/e32039203a2bc5dd47d57f9621e0ec07/150/150/Image/Png](https://raw.githubusercontent.com/VxlidDev/kronos-iii/main/Photoshop_j0nS4z6EFg.png))
 
 ### Information
 
